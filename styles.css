@@ -1,0 +1,102 @@
+:root {
+    --bg: #FFF7E8;
+    --card: #FFFFFF;
+    --accent: #f3b359;
+    --accent-2: #2EC4B6;
+    --text: #333333;
+}
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-size: 16px;
+    color: var(--text);
+    font-family: 'Baloo 2', cursive;
+    overflow: hidden;
+}
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: min(100vh);
+    background-color: var(--bg);
+    background: linear-gradient(180deg, #FFF1C1, #FFE8D6);
+}
+.container {
+    background-color: var(--card);
+    width: clamp(400px, 70%, 700px);
+    border-radius: 15px;
+    box-shadow: 0 10px 15px -3px rgb(0, 0, 0, 0.05);
+    padding: 20px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+}
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    width: inherit;
+    padding: 30px;
+}
+.button-container button {
+    padding: 10px;
+    border-radius: 10px;
+    width: min(40%, 200px);
+    height: max(80%, 150px);
+    font-size: 1.5rem;
+    background-color: var(--bg);
+    border: 2px solid #fbefd9;
+    cursor: pointer;
+    transition: 150ms ease;
+}
+.button-container button:hover {
+    transform: scale(1.1);
+}
+.container > p {
+    text-align: center;
+    padding: 20px;
+    font-weight: 500;
+}
+.scoreContainer {
+    display: flex;
+    gap: 20px;
+    justify-content: space-around;
+    text-align: center;
+    padding: 20px;
+}
+.roundsContainerLabel {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 20px;
+    padding: 20px;
+}
+.choiceContainer {
+    text-align: center;
+    background-color: #F1FFFD;
+    border-radius: 10px;
+    width: max-content;
+    padding: 10px 20px;
+}
+.result-container {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.result-container button {
+    border-radius: 10px;
+    border: none;
+    background-color: var(--accent);
+    cursor: pointer;
+}
+@media (max-width: 600px) {
+    .button-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
