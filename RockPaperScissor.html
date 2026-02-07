@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+<script>
+
+    let humanScore = 0;
+    let compScore = 0;
+
+    function getComputerChoice() {
+        let computerChoice = Math.floor(Math.random() * 3) + 1;
+        if (computerChoice === 1) return "Rock";
+        if (computerChoice === 2) return "Paper";
+        return "Scissor";
+    }
+
+    function getHumanChoice() {  
+        return prompt("Your choice?");
+    }
+
+    function playRound(compChoice, humanChoice) {
+        compChoice = compChoice.toLowerCase();
+        humanChoice = humanChoice.toLowerCase();
+
+        const rules = {
+            rock: "scissor",
+            paper: "rock", 
+            scissor: "paper"
+        };
+
+        if (compChoice == humanChoice) {
+            console.log("Draw");
+        } else if (rules[humanChoice] == compChoice) {
+            console.log("Human Wins");
+            humanScore++;
+        } else {
+            console.log("Computer Wins");
+            compScore++;
+        }
+    }
+
+    function playGame() {
+        for(let rounds = 1; rounds <= 5; rounds++){
+            console.log(`Round: ${rounds}`);
+
+            const computerChoice = getComputerChoice();
+            const humanChoice = getHumanChoice();
+
+            playRound(computerChoice, humanChoice);
+
+            console.log("Computer Score: " + compScore);
+            console.log("Human Score: " + humanScore);
+        }
+
+        if (humanScore > compScore) {
+            console.log("Human Wins");
+        } else if (humanScore < compScore) {
+            console.log("Computer Wins");
+        } else {
+            console.log("Draw")
+        }
+    }
+
+    playGame();
+
+
+
+    
+</script>
+
+    
+</body>
+</html>
